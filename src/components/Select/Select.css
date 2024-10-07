@@ -12,6 +12,10 @@
   height: auto;
 }
 
+.select:hover {
+  opacity: 0.9;
+}
+
 .select.range {
   height: 45px;
 }

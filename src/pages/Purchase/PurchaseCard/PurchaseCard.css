@@ -17,6 +17,11 @@
   font-size: 16px;
   font-weight: 500;
   font-family: "Prompt", sans-serif;
+  cursor: pointer;
+}
+
+.purchase-title:hover {
+  opacity: 0.7;
 }
 
 .purchase-style {

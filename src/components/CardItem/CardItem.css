@@ -12,6 +12,12 @@
   padding: 20px;
   border: 1px solid #272845;
   position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-item:hover {
+  transform: scale(1.04);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .card-column {
@@ -146,7 +152,7 @@
   border-radius: 5px;
   width: 300px;
   text-align: center;
-  color: #FBDB9F;
+  color: #fbdb9f;
 }
 
 .close-btn {
