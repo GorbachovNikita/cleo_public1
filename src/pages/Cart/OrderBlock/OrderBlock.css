@@ -82,6 +82,7 @@
   background: #fbdb9f;
   font-size: 13px;
   border-radius: 6px 0 0 6px;
+  width: 100%;
 }
 
 .cart-search-button {
@@ -114,9 +115,6 @@
 }
 
 @media screen and (max-width: 400px) {
-  .cart-input {
-    width: 150px;
-  }
   .cart-search-button {
     padding: 10px;
   }

@@ -47,7 +47,7 @@
 }
 
 @media screen and (max-width: 650px) {
-  .purchase-style_number{
+  .purchase-style_number {
     display: none;
   }
 }
