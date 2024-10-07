@@ -12,11 +12,10 @@
   padding: 20px;
   border: 1px solid #272845;
   position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease;
 }
 
 .card-item:hover {
-  transform: scale(1.04);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
@@ -95,11 +94,16 @@
   border: 1px solid #b08a5e;
   color: #fbdb9f;
   font-size: 13px;
-  width: 100px;
+  width: 122px;
   height: 41px;
   bottom: 20px;
   right: 20px;
   position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row-reverse;
+  gap: 6px;
 }
 
 /* СТИЛИ ДЛЯ ФИЛТРОВ У КАРТОЧКИ */
@@ -169,6 +173,11 @@
 .close-btn:hover,
 .close-btn:focus {
   opacity: 0.7;
+}
+
+.icon-money {
+  width: 16px;
+  height: 16px;
 }
 
 @media screen and (max-width: 821px) {

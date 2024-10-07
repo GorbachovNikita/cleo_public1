@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../../../components/CardItem/CardItem';
+import MoneyIcon from '../../../assets/icons/money.svg';
 
 const CardsItem = ({ title, stock, price }) => {
   const [count, setCount] = useState(1);
@@ -37,7 +38,10 @@ const CardsItem = ({ title, stock, price }) => {
       <div className='cleo-card_img'></div>
       <div className='article-footer'>
         <p className='article-price'>{price * count}$</p>
-        <button className='article-btn'>Add to Cart</button>
+        <button className='article-btn'>
+          <img src={MoneyIcon} alt='Money' className='icon-money'/>
+          Add to Cart
+          </button>
       </div>
     </article>
   );
