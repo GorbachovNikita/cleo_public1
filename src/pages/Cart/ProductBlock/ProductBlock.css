@@ -1,0 +1,150 @@
+.product-cart {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 5px 0;
+}
+
+.product-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-title {
+  font-weight: 300;
+  margin: 0 0 0 40px;
+}
+
+.product-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.prod-block {
+  display: flex;
+  align-items: center;
+  margin: 0 20px;
+  gap: 20px;
+}
+
+.prod-controls {
+  display: flex;
+  align-items: center;
+  border: 1px solid #1e1a2b;
+}
+
+.text-right {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+
+.decor-prod {
+  display: block;
+  height: 1px;
+  background-color: #1718262a;
+  margin: 10px 0;
+}
+
+.prod-img {
+  background: #1e1a2b;
+  width: 80px;
+  height: 50px;
+  border-radius: 6px;
+}
+
+.card-prod-title {
+  font-size: 16px;
+}
+
+.prod {
+  color: #1e1a2b;
+}
+
+.prod-cash {
+  margin-left: 20px;
+  color: #1e1a2b;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 13px;
+  font-weight: 200;
+}
+
+.counter-block {
+  display: flex;
+}
+
+.prod-checkpoint {
+  background: #fbdb9f;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #472f2b;
+  border-radius: 4px;
+  margin-left: 10px;
+  gap: 20px;
+}
+
+.icon-dots {
+  display: none;
+  width: 16px;
+  height: 16px;
+}
+
+.dots {
+  display: flex;
+  flex-direction: row-reverse;
+  column-gap: 10px;
+  align-items: center;
+}
+
+.counter-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid #171826;
+  background: none;
+  border-radius: 6px;
+  padding: 5px 20px;
+}
+
+@media screen and (max-width: 1310px) {
+  .prod-checkpoint {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .product-row {
+    display: none;
+  }
+  .counter-controls {
+    display: none;
+  }
+  .icon-dots {
+    display: flex;
+  }
+  .card-prod-title {
+    font-size: 14px;
+  }
+  .prod-img {
+    width: 70px;
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .counter-controls {
+    display: none;
+  }
+  .prod-block {
+    margin: 0;
+    gap: 8px;
+  }
+  .prod-img {
+    width: 60px;
+    height: 38px;
+  }
+}

@@ -1,0 +1,148 @@
+.authorization_form {
+  width: 60%;
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+
+.authorization_title {
+  background: linear-gradient(
+    180deg,
+    rgba(251, 219, 159, 1) 0%,
+    rgba(176, 138, 94, 1) 100%,
+    rgba(251, 219, 159, 1) 100%
+  );
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.signup_block,
+.login_block_by_username,
+.login_secretWord,
+.signup_completed {
+  background: linear-gradient(
+    180deg,
+    rgba(251, 219, 159, 1) 0%,
+    rgba(176, 138, 94, 1) 100%,
+    rgba(251, 219, 159, 1) 100%
+  );
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.authorization_title p {
+  font-size: 32px;
+}
+
+.signup_block,
+.login_block_by_username {
+  display: flex;
+}
+
+.signup_block_leftContent {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.signup_block input,
+.login_block_by_username input,
+.login_secretWord input {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.signup_block_buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+
+.signup_block_buttons .siteButton {
+  margin-left: 20px;
+}
+
+.signup_block_top_buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.login_block_top_buttons button {
+  width: 49%;
+  padding: 10px;
+}
+
+.login_block_by_username {
+  background: linear-gradient(
+    253deg,
+    rgba(251, 219, 159, 1) 0%,
+    rgba(176, 138, 94, 1) 100%
+  );
+  padding: 20px;
+}
+
+.login_block_top_buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.login_block_bottom_button {
+  width: 100%;
+  margin-top: 5px;
+}
+
+.inputsTitle {
+  color: #171826;
+  margin-bottom: 5px;
+}
+
+.signup_completed img {
+  max-height: 200px;
+  width: auto;
+}
+
+.authorization_form {
+  margin-top: 100px;
+}
+
+.label-form {
+  position: absolute;
+  top: 15px;
+}
+
+@media screen and (max-width: 900px) {
+  .signup_completed img {
+    margin: 0 auto;
+  }
+
+  .cleopatraImg {
+    display: none;
+  }
+
+  .signup_block_leftContent {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .signup_block_buttons {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .signup_block_buttons .siteButton {
+    margin-left: 0px;
+  }
+
+  .authorization_form {
+    width: 90%;
+  }
+}

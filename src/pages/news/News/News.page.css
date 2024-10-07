@@ -1,0 +1,52 @@
+.container {
+  padding: 60px 100px;
+  margin-bottom: 40px;
+  display: flex;
+  width: 100%;
+}
+
+.left-column {
+  flex: 1;
+  margin-right: 20px;
+  margin-left: 20px;
+  flex-direction: column;
+  display: flex;
+}
+
+@media screen and (max-width: 1200px) {
+  .container {
+    flex-direction: column;
+  }
+  .left-column {
+    margin-right: 0;
+    margin-left: 0;
+    order: 2;
+  }
+  .banner {
+    display: none; /* Показываем баннер по умолчанию */
+  }
+}
+
+@media screen and (max-width: 930px) {
+  .container {
+    padding: 50px 80px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .container {
+    padding: 40px 60px;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .container {
+    padding: 30px 40px;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .container {
+    padding: 30px;
+  }
+}

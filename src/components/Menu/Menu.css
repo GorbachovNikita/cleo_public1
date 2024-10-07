@@ -1,0 +1,108 @@
+.menu {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 10px;
+  margin-right: 3.5rem;
+  position: relative;
+  flex-direction: column;
+}
+
+.menu-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.menu-button {
+  background: #171826;
+  border: 1px solid #472f2b;
+  padding: 8px 80px;
+  border-radius: 6px;
+  color: #fbdb9f;
+  font-weight: 400;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.menu-buttons_mobile {
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  background: linear-gradient(
+    180deg,
+    rgba(251, 219, 159, 1) 0%,
+    rgba(176, 138, 94, 1) 100%,
+    rgba(251, 219, 159, 1) 100%
+  );
+  border: 1px solid #b08a5e;
+  padding: 20px;
+  position: absolute;
+  z-index: 1000;
+  right: 0;
+  top: 100%;
+}
+
+.menu-button_mobile {
+  width: 288px;
+  height: 36px;
+  background: #171826;
+  color: #fbdb9f;
+  border-radius: 6px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.close-button_menu {
+  cursor: pointer;
+  color: #171826;
+  background: #fbdb9f;
+  padding: 11px 15px;
+  border-radius: 6px;
+  border: 1px solid #b08a5e;
+  position: absolute; /* Позиционирование относительно родительского элемента */
+  top: 10px; /* Расстояние от верхней части экрана */
+  right: 2px; /* Расстояние от правой части экрана */
+  z-index: 1001;
+}
+
+@media screen and (max-width: 1400px) {
+  .menu-buttons {
+    gap: 10px;
+  }
+  .menu-button {
+    padding: 8px 60px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .menu {
+    margin-right: 3rem;
+  }
+  .menu-buttons {
+    gap: 10px;
+  }
+  .menu-button {
+    padding: 8px 40px;
+  }
+}
+
+@media screen and (max-width: 930px) {
+  .menu {
+    margin-right: 20px;
+  }
+  .menu-buttons {
+    gap: 10px;
+  }
+  .menu-button {
+    padding: 8px 20px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .menu-buttons {
+    display: none;
+  }
+}

@@ -1,0 +1,25 @@
+
+.siteButton {
+    min-width: 100px;
+    background: #1E1A2B;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    color: #FBDB9F;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.selectButton {
+    background-color: #FBDB9F;
+    border: 1px solid #472F2B;
+    color: #472F2B;;
+}
+
+.siteButtonWidth100 {
+    width: 100%;
+}
+
+.siteButtonMarginBottom40 {
+    margin-bottom: 40px;
+}

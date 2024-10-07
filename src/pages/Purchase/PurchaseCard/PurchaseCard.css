@@ -1,0 +1,62 @@
+.purchase-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin: 40px 0;
+}
+
+.purchase-cont {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.purchase-title {
+  color: #171826;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Prompt", sans-serif;
+}
+
+.purchase-style {
+  font-size: 13px;
+  color: #171826;
+  font-weight: 100;
+}
+
+.purchase-style_number {
+  font-size: 13px;
+  color: #171826;
+  font-weight: 100;
+}
+
+.decor-purchase {
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #17182645;
+}
+
+@media screen and (max-width: 870px) {
+  .purchase-title {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .purchase-style_number{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .purchase-card {
+    margin: 20px 0;
+  }
+  .discount-block {
+    margin-top: 10px;
+  }
+}

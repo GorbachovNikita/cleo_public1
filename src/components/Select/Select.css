@@ -1,0 +1,44 @@
+.select {
+  background: #171826;
+  border: 1px solid #472f2b;
+  color: #fbdb9f;
+  border-radius: 6px;
+  width: 170px;
+  padding: 5px;
+  margin-top: 8px;
+  font-size: 13px;
+  appearance: none;
+  position: relative;
+  height: auto;
+}
+
+.select.range {
+  height: 45px;
+}
+
+.select:focus {
+  outline: none;
+}
+
+.custom-select {
+  position: relative;
+  display: inline-block;
+}
+
+.arrow {
+  position: absolute;
+  right: 10px;
+  top: 60%;
+  transform: translateY(-50%);
+  width: 9px;
+  height: 9px;
+  background: url("../../assets//icons//arrow.svg") no-repeat center;
+  background-size: contain;
+  pointer-events: none;
+}
+
+@media screen and (max-width: 1100px) {
+  .select {
+    width: 250px;
+  }
+}
