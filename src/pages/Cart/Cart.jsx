@@ -2,13 +2,14 @@ import React from 'react';
 import Header from '../../components/Header/Header';
 import CartBlock from './CartBlock/CardtBlock';
 import Banner from '../../components/Banner/Banner';
+import './Cart.css';
 
 const Carts = () => {
     return (
     <>
     <Header />
-    <div className='container'>
-        <Banner position="left" width='156px' height='565px'/>
+    <div className='container-carts'>
+        <Banner position="left" width='' height='' className='banner-left_carts'/>
         <CartBlock />
     </div>
     </>

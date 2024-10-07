@@ -11,16 +11,16 @@ const News = () => {
      <>
       <Header />
         <div className='container'>
-        <Banner position="left" width='156px' height='565px'/>
+        <Banner position="left" width='156px' height='565px' className='banner-news'/>
           <div className='left-column'>
             <CleoNews />
                {/* <CryptoBlock /> */}
             <NewsCards />
-            <Banner position="bottom" height='150px' /> {/* Нижний баннер под новостями */}
+            <Banner position="bottom" height='150px' className='banner-new_bottom'/> {/* Нижний баннер под новостями */}
           </div>
           <div>
             <CryptoBlock />
-            <Banner position="bottom" width='156px' height='274px'/> {/* Нижний баннер под криптовалютами */}
+            <Banner position="bottom" width='156px' height='274px' className='banner-news'/> {/* Нижний баннер под криптовалютами */}
         </div>
       </div>
      </>
