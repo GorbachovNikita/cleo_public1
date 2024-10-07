@@ -9,6 +9,8 @@ import Logs from '../pages/Logs/Logs';
 import Proxy from '../pages/Proxy/Proxy';
 import SMS from '../pages/SMS/SMS';
 import Purchase from '../pages/Purchase/Purchase';
+import SellerPanel from "../pages/SellerPanel/SellerPanel";
+import Support from "../pages/Support/Support";
 
 export const privateRouters = [
 
@@ -28,4 +30,6 @@ export const publicRoutes = [
     {path: '/profile', element: Profile},
     {path: '/rules', element: Rules},
     {path: '/purchase', element: Purchase},
+    {path: '/sellerpanel', element: SellerPanel},
+    {path: '/support', element: Support},
 ]

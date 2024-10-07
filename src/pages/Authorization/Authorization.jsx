@@ -116,7 +116,6 @@ const Authorization = () => {
 
                         <div className="login_form_two" style={{display: loginFormTwoDisplay}}>
                             <SiteInput placeholder="Hash Phrase"/>
-                            <SiteInput placeholder="Password"/>
                             <SiteInput placeholder="Google Authenticator"/>
 
                             <div className="login_block_bottom_button">
