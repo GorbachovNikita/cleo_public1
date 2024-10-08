@@ -1,4 +1,3 @@
-
 .card-list {
   background: var(--bg-color);
   border-radius: 12px;
@@ -102,19 +101,6 @@
 @media screen and (max-width: 930px) {
   .filter-container {
     top: -45px;
-  }
-}
-
-@media screen and (max-width: 760px) {
-  .search-container {
-    top: -45px;
-  }
-  .search-input {
-    width: 160px;
-    padding: 7px 10px;
-  }
-  .icon-search {
-    padding: 8.8px;
   }
 }
 

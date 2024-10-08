@@ -67,14 +67,14 @@
   flex: 1;
 }
 
-.select-payment,
-.select-bank {
-  padding: 5px 25px;
+.select-payment {
+  padding: 7px 25px 7px 15px;
   appearance: none;
 }
 
 .select-bank {
-  padding: 5px 25px;
+  padding: 7px 25px;
+  appearance: none;
 }
 
 .arrow-payment {
@@ -213,6 +213,9 @@ input:focus {
   }
   .modal-content_payment {
     margin: 20px 0px 20px 0;
+  }
+  .arrow-payment {
+    top: 26%;
   }
 }
 

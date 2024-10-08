@@ -36,14 +36,15 @@
   }
   .cart-container {
     padding: 20px;
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  .cart-container {
     margin-left: 0;
   }
 }
+
+/* @media screen and (max-width: 1200px) {
+  .cart-container {
+    margin-left: 0;
+  }
+} */
 
 @media screen and (max-width: 660px) {
   .cart-block {
