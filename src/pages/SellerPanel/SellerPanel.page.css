@@ -33,6 +33,11 @@
     align-items: center;
 }
 
+.sellerCart_text p {
+    font-size: 20px;
+    padding-left: 20px;
+}
+
 .sellerPanel_title_buttons button {
     margin-right: 10px;
 }
@@ -127,6 +132,7 @@
     color: #171826;
 }
 
+
 @media screen and (max-width: 740px) {
 
     .sellerPanel_title {
@@ -187,4 +193,42 @@
         flex-direction: column;
     }
 
+}
+
+@media screen and (max-width: 1140px) {
+
+    .sellerPanel_chart {
+        background-size: auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .sellerPanel_chart {
+        background-size: auto 100%;
+    }
+}
+
+.sellerCart_content .recharts-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1000;
+}
+
+.sellerCart_content .recharts-surface circle {
+    fill: #171826;
+    stroke: none;
+    r: 3;
+}
+
+.sellerCart_content .recharts-surface .recharts-line path {
+    stroke: #171826;
+}
+
+.custom-tooltip {
+    background: #171826;
+    padding: 5px 15px;
+    border-radius: 5px;
+    color: #FBDB9F;
 }
