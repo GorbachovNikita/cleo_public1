@@ -6,13 +6,29 @@
   border: 1px solid var(--border-color);
   height: fit-content;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  width: 60%;
+}
+
+.copy-block {
+  display: flex;
+  align-items: flex-end;
   justify-content: space-between;
-  align-items: flex-start;
-  gap: 50px;
+}
+
+.copy {
+  border-radius: 6px;
+  padding: 7px 10px;
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  border: 1px solid var(--border-color);
 }
 
 .payment-block {
-  flex: 1;
+  width: 235px;
   margin: 10px;
 }
 
@@ -23,8 +39,8 @@
 
 .payment-title {
   font-weight: 500;
-  margin-bottom: 15px;
   color: var(--primary-color);
+  margin-bottom: 10px;
 }
 
 .payment-btn {
@@ -34,10 +50,11 @@
   color: var(--secondary-color);
   border-radius: 6px;
   border: 1px solid var(--border-color);
-  padding: 6px 40px;
+  padding: 6px 30px;
   cursor: pointer;
   width: 100%;
   justify-content: center;
+  font-size: 16px;
 }
 
 .input-container {
@@ -51,10 +68,10 @@
   position: relative;
   flex-direction: column;
   display: flex;
+  margin-bottom: 10px;
 }
 
 .select-payment,
-.select-bank,
 .input-payment {
   background: var(--secondary-color);
   border: 1px solid #472f2b;
@@ -72,15 +89,10 @@
   appearance: none;
 }
 
-.select-bank {
-  padding: 7px 25px;
-  appearance: none;
-}
-
 .arrow-payment {
   position: absolute;
-  right: 8px;
-  top: 30%;
+  right: 11px;
+  top: 48%;
   transform: translateY(-50%);
   width: 9px;
   height: 9px;
@@ -91,8 +103,7 @@
   appearance: none;
 }
 
-.select-payment:focus,
-.select-bank:focus {
+.select-payment:focus {
   outline: none;
 }
 
@@ -118,19 +129,6 @@ input:focus {
   font-weight: 200;
   margin-bottom: 5px;
   color: var(--primary-color);
-}
-
-.input-mount {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 15px;
-}
-
-.option-pay {
-  background: #fbdb9f;
-  border-radius: 6px;
-  border: 1px solid var(--border-color);
-  padding: 3px;
 }
 
 .modal-payment {
@@ -173,38 +171,23 @@ input:focus {
 }
 
 @media screen and (max-width: 1030px) {
-  .payment-container {
-    flex-direction: column-reverse;
-    gap: 20px;
-    justify-content: center;
-    align-items: normal;
-  }
   .img-qr {
     margin-left: auto;
     margin-right: auto;
     display: flex;
   }
+  .copy-block {
+    margin-top: 10px;
+  }
 }
 
-@media screen and (max-width: 660px) {
-  .input-mount {
-    flex-direction: column;
-  }
-  .input-payment {
+@media screen and (max-width: 860px) {
+  .payment-container {
     width: 100%;
-    font-size: 13px;
   }
 }
 
 @media screen and (max-width: 490px) {
-  .select-payment,
-  .select-bank {
-    padding: 5px 25px 5px 10px;
-    font-size: 13px;
-  }
-  .payment-container {
-    padding: 10px 10px 20px 10px;
-  }
   .modal-payment_title {
     flex-wrap: wrap;
   }
@@ -213,9 +196,6 @@ input:focus {
   }
   .modal-content_payment {
     margin: 20px 0px 20px 0;
-  }
-  .arrow-payment {
-    top: 26%;
   }
 }
 
@@ -227,11 +207,5 @@ input:focus {
     width: 150px;
     margin-left: auto;
     margin-right: auto;
-  }
-}
-
-@media screen and (max-width: 385px) {
-  .payment-btn {
-    padding: 6px 20px;
   }
 }
