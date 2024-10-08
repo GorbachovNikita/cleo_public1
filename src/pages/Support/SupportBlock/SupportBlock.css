@@ -101,4 +101,7 @@
   .support-container {
     padding: 15px;
   }
+  .social-btn {
+    gap: 5px;
+  }
 }
