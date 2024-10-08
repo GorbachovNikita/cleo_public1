@@ -11,6 +11,7 @@ import SMS from '../pages/SMS/SMS';
 import Purchase from '../pages/Purchase/Purchase';
 import SellerPanel from "../pages/SellerPanel/SellerPanel";
 import Support from "../pages/Support/Support";
+import Payment from '../pages/Payment/Payment';
 
 export const privateRouters = [
 
@@ -32,4 +33,5 @@ export const publicRoutes = [
     {path: '/purchase', element: Purchase},
     {path: '/sellerpanel', element: SellerPanel},
     {path: '/support', element: Support},
+    {path: '/payment', element: Payment},
 ]

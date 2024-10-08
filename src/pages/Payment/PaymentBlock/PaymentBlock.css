@@ -1,0 +1,169 @@
+.payment-container {
+  background: linear-gradient(
+    180deg,
+    rgba(251, 219, 159, 1) 0%,
+    rgba(176, 138, 94, 1) 100%,
+    rgba(251, 219, 159, 1) 100%
+  );
+  border-radius: 12px;
+  margin: 0 auto;
+  padding: 30px;
+  border: 1px solid #b08a5e;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 50px;
+}
+
+.payment-block {
+  flex: 1;
+  margin: 10px;
+}
+
+.payment-block img {
+  max-width: 100%; /* Картинка не превышает ширину колонки */
+  height: auto;
+}
+
+.payment-title {
+  font-weight: 500;
+  margin-bottom: 15px;
+  color: #171826;
+}
+
+.payment-btn {
+  display: flex;
+  align-items: center;
+  background: #171826;
+  color: #fbdb9f;
+  border-radius: 6px;
+  border: 1px solid #472f2b;
+  padding: 6px 40px;
+  cursor: pointer;
+  width: 100%;
+  justify-content: center;
+}
+
+.input-payment {
+  background: #fbdb9f;
+  border-radius: 6px;
+  border: 1px solid #472f2b;
+  padding: 5px;
+  flex: 1;
+}
+
+.input-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+/* ДРОПДАУН ДЛЯ ВЫЛЮТЫ */
+.dropdown {
+  position: relative;
+  flex-direction: column;
+  display: flex;
+}
+
+.select-payment,
+.select-bank {
+  background: #fbdb9f;
+  border: 1px solid #472f2b;
+  color: #171826;
+  border-radius: 6px;
+  padding: 5px 25px;
+  appearance: none;
+}
+
+.select-bank {
+  padding: 5px 25px;
+}
+
+.arrow-payment {
+  position: absolute;
+  right: 8px;
+  top: 34%;
+  transform: translateY(-50%);
+  width: 9px;
+  height: 9px;
+  background: url("../../../assets/icons/arrow-black.svg") no-repeat center;
+  background-size: contain;
+  pointer-events: none;
+  color: #171826;
+  appearance: none;
+}
+
+.select-payment:focus,
+.select-bank:focus {
+  outline: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+.input-block_payment {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.input_payment {
+  font-size: 10px;
+  font-weight: 100;
+  margin-top: 5px;
+}
+
+.payment-title-tin {
+  font-size: 13px;
+  font-weight: 200;
+  margin-bottom: 5px;
+  color: #171826;
+}
+
+.input-mount {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+@media screen and (max-width: 1030px) {
+  .payment-container {
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: normal;
+  }
+  .img-qr {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .input-mount {
+    flex-direction: column;
+  }
+  .input-payment {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .input-container {
+    flex-direction: column;
+  }
+  .select-payment,
+  .select-bank {
+    padding: 5px 25px 5px 10px;
+  }
+}
+
+@media screen and (max-width: 385px) {
+  .payment-btn {
+    padding: 6px 20px;
+  }
+}
