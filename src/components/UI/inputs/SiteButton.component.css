@@ -23,3 +23,8 @@
 .siteButtonMarginBottom40 {
     margin-bottom: 40px;
 }
+
+.lightButton {
+    background: linear-gradient(180deg, rgba(251, 219, 159, 1) 0%, rgba(176, 138, 94, 1) 100%, rgba(251, 219, 159, 1) 100%);
+    color: #171826;
+}

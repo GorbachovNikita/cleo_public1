@@ -13,7 +13,7 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
-    margin-top: 50px;
+    margin-top: 60px;
     margin-bottom: 15px;
 }
 
@@ -51,6 +51,7 @@
     position: relative;
     float: left;
     background-image: url("../../assets/img/sellerpanel/chart_background.svg");
+    background-size: 100%;
     background-repeat: no-repeat;
     margin-top: 15px;
     border: 1px solid #C0C0C0;

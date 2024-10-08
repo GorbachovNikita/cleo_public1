@@ -11,7 +11,8 @@ import SMS from '../pages/SMS/SMS';
 import Purchase from '../pages/Purchase/Purchase';
 import SellerPanel from "../pages/SellerPanel/SellerPanel";
 import Support from "../pages/Support/Support";
-import Payment from '../pages/Payment/Payment';
+import Checker from "../pages/Checker/Checker";
+import TopUp from "../pages/TopUp/TopUp";
 
 export const privateRouters = [
 
@@ -30,8 +31,9 @@ export const publicRoutes = [
     {path: '/faq', element: FAQ},
     {path: '/profile', element: Profile},
     {path: '/rules', element: Rules},
+    {path: '/checker', element: Checker},
     {path: '/purchase', element: Purchase},
     {path: '/sellerpanel', element: SellerPanel},
     {path: '/support', element: Support},
-    {path: '/payment', element: Payment},
+    {path: '/topup', element: TopUp},
 ]

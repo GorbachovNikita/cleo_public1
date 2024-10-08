@@ -1,8 +1,8 @@
-import React from 'react'
-import './Support.page.css'
+import React from 'react';
 import Header from "../../components/Header/Header";
+import './TopUp.page.css'
 
-const Support = () => {
+const TopUp = () => {
     return (
         <div>
             <Header/>
@@ -10,4 +10,4 @@ const Support = () => {
     );
 };
 
-export default Support;
+export default TopUp;

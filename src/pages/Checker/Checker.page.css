@@ -1,0 +1,142 @@
+
+.checker_form {
+    width: 80%;
+    position: relative;
+    margin: 0 auto;
+    background: linear-gradient(
+            180deg,
+            rgba(251, 219, 159, 1) 0%,
+            rgba(176, 138, 94, 1) 100%,
+            rgba(251, 219, 159, 1) 100%
+    );
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+    margin-bottom: 15px;
+}
+
+.checker_title {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    align-items: center;
+}
+
+.checker_title_middleContent p {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.checker_title_rightContent button {
+    float: right;
+}
+
+.chekcer_content {
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+
+.checker_bottomButtons {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    margin: 10px auto;
+}
+
+.checker_bottomButtons div {
+    text-align: center;
+}
+
+.checker_contentBlock {
+    width: 100%;
+    position: relative;
+    float: left;
+    border: 1px solid #C0C0C0;
+    background: linear-gradient(
+            180deg,
+            rgba(251, 219, 159, 1) 0%,
+            rgba(176, 138, 94, 1) 100%,
+            rgba(251, 219, 159, 1) 100%
+    );
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.checker_contentTitle {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.checkerContent_block {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px;
+    border-top: 1px solid black;
+}
+
+.checkerContent_block:first-child {
+    border-top: none;
+}
+
+.checkerContent_block p {
+    margin-left: 10px;
+}
+
+.checker_block_content {
+    padding: 10px;
+    padding-top: 0px;
+}
+
+.checker_inputs, .checker_alive, .checker_cards {
+    display: flex;
+}
+
+.checker_cards {
+    flex-direction: column;
+}
+
+@media screen and (max-width: 850px) {
+
+    .chekcer_content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media screen and (max-width: 630px) {
+
+    .chekcer_content {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+}
+
+@media screen and (max-width: 430px) {
+
+    .checker_title {
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+
+@media screen and (max-width: 380px) {
+
+    .checkerContent_block {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .checkerContent_block img {
+        margin-bottom: 5px;
+    }
+
+}
