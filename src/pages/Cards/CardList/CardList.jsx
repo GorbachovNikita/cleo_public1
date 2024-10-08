@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import CardsItem from '../CardsItem/CardsItem';
-import '../../../styles/styleCards.css';
+import './CardList.css';
 import { cardData } from '../../../helpers/CardData';
 import Search from '../../../components/Search/Search';
 import FilterIcon from '../../../assets/icons/filters.svg';

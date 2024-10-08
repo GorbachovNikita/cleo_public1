@@ -1,3 +1,4 @@
+
 .card-list {
   background: var(--bg-color);
   border-radius: 12px;
@@ -16,7 +17,7 @@
 }
 
 .item-title {
-  color: var( --primary-color);
+  color: var(--primary-color);
   font-size: 32px;
   font-weight: 400;
   line-height: 90%;
@@ -83,14 +84,18 @@
   .grid-card {
     grid-template-columns: 1fr;
   }
-  .item-title {
-    font-size: 26px;
-  }
   .filter-container {
     display: flex;
     position: absolute;
     top: -50px;
     left: 0;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .card-list {
+    padding: 15px;
+    margin-bottom: 40px;
   }
 }
 
@@ -117,27 +122,13 @@
   .grid-card {
     padding: 0;
   }
-  .card-list {
-    padding: 15px;
-    margin-bottom: 40px;
-  }
   .btn-cards {
     width: 280px;
-  }
-  .item-title {
-    font-size: 22px;
   }
 }
 
 @media screen and (max-width: 360px) {
   .item-title {
     font-size: 16px;
-  }
-  .filter-container {
-    top: -50px;
-    left: 0;
-  }
-  .icon-filter {
-    padding: 7px 10px;
   }
 }
