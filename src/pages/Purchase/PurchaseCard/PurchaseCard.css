@@ -17,6 +17,11 @@
   font-size: 16px;
   font-weight: 500;
   font-family: "Prompt", sans-serif;
+  cursor: pointer;
+}
+
+.purchase-title:hover {
+  opacity: 0.7;
 }
 
 .purchase-style {
@@ -47,7 +52,7 @@
 }
 
 @media screen and (max-width: 650px) {
-  .purchase-style_number{
+  .purchase-style_number {
     display: none;
   }
 }

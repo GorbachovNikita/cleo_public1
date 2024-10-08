@@ -7,7 +7,7 @@
   );
   border-radius: 6px;
   margin: 0 auto;
-  padding: 30px;
+  padding: 30px 30px 10px 30px;
   border: 1px solid #b08a5e;
   width: 80%;
 }
@@ -175,16 +175,16 @@
     margin-right: 40px;
   }
   .discount-cash {
-    margin-right: 58px;
+    margin-right: 53px;
   }
   .total-block {
-    gap: 58px;
+    gap: 57px;
   }
   .purchase-row {
     margin: 10px 0;
   }
   .quantity {
-    margin-right: -8px;
+    margin-right: -10px;
   }
 }
 

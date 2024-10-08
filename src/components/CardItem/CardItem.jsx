@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './CardItem.css';
+import MoneyIcon from '../../assets/icons/money.svg';
 
 const CardItem = ({ title, stock, price, seller, country, city, brand, level, bank, bin }) => {
   const [count, setCount] = useState(1);
@@ -48,7 +49,10 @@ const CardItem = ({ title, stock, price, seller, country, city, brand, level, ba
       <div className='cleo-card_img'></div>
       <div className='article-footer'>
         <p className='article-price'>{price * count}$</p>
-        <button className='article-btn' onClick={openPopup}>Add to Cart</button>
+        <button className='article-btn' onClick={openPopup}>
+          <img src={MoneyIcon} alt='Money' className='icon-money'/>
+          Add to Cart
+        </button>
 
       {/* Всплывающее окно */}
       {isPopupVisible && 

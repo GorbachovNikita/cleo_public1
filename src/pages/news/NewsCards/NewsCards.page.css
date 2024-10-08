@@ -46,8 +46,8 @@
   }
 }
 
-/* @media screen and (max-width: 1200px) {
+@media screen and (max-width: 1200px) {
   .card-list-news {
-    order: 3;
+    gap: 10px;
   }
-} */
+}

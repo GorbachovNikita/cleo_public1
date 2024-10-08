@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './PurchaseBlock.css';
 import PurchaseCard from '../PurchaseCard/PurchaseCard';
 import Modal from '../../../components/UI/Modal/Modal';
@@ -15,8 +15,6 @@ export const purchase = [
     { id: 3, title: 'Proxy 189273', quantity: 1, price: '15$' },
 ];
 
-
-
 const PurchaseBlock = () => {
     const [isModalOpen, setModalOpen] = useState(false);
 
@@ -27,6 +25,16 @@ const PurchaseBlock = () => {
     const handleCloseModal = () => {
         setModalOpen(false);
     };
+
+    useEffect(() => {
+
+        const lines = document?.getElementsByClassName("decor-purchase");
+
+        if (lines.length !== 0) {
+            lines[lines.length - 1].style.display = "none";
+        }
+
+    }, [])
 
     return (
         <div className='purchase-container'>

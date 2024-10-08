@@ -1,7 +1,8 @@
 import React from 'react';
 import './Banner.css';
+import classnames from 'classnames';
 
-const Banner = ({ width = '100%', height = '300px', backgroundImage = '' }) => {
+const Banner = ({ width = '100%', height = '200px', className }) => {
     const bannerStyle = {
         width: width,
         height: height,
@@ -15,8 +16,10 @@ const Banner = ({ width = '100%', height = '300px', backgroundImage = '' }) => {
         // textAlign: 'center',
     };
 
+    const classes = classnames('banner', className); 
+
     return (
-        <div className='banner' style={bannerStyle}>
+        <div className={classes} style={bannerStyle}>
         </div>
     );
 };

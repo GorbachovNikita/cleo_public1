@@ -12,6 +12,11 @@
   padding: 20px;
   border: 1px solid #272845;
   position: relative;
+  transition: box-shadow 0.3s ease;
+}
+
+.card-item:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .card-column {
@@ -49,7 +54,7 @@
   font-size: 13px;
   color: #171826;
   position: absolute;
-  bottom: 61px;
+  bottom: 67px;
   right: 20px;
 }
 
@@ -89,11 +94,16 @@
   border: 1px solid #b08a5e;
   color: #fbdb9f;
   font-size: 13px;
-  width: 100px;
-  height: 36px;
+  width: 122px;
+  height: 41px;
   bottom: 20px;
   right: 20px;
   position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row-reverse;
+  gap: 6px;
 }
 
 /* СТИЛИ ДЛЯ ФИЛТРОВ У КАРТОЧКИ */
@@ -146,7 +156,7 @@
   border-radius: 5px;
   width: 300px;
   text-align: center;
-  color: #FBDB9F;
+  color: #fbdb9f;
 }
 
 .close-btn {
@@ -165,6 +175,11 @@
   opacity: 0.7;
 }
 
+.icon-money {
+  width: 16px;
+  height: 16px;
+}
+
 @media screen and (max-width: 821px) {
   .cleo-card_img {
     width: 100px;
@@ -175,7 +190,7 @@
 
 @media screen and (max-width: 630px) {
   .article-price {
-    margin-right: 10px;
+    bottom: 55px;
   }
   .card-item {
     padding: 12px;
@@ -186,10 +201,12 @@
     font-size: 14px;
   }
   .article-btn {
-    width: 90px;
+    width: 113px;
+    bottom: 11px;
+    height: 37px;
   }
   .counter-controls-card {
-    padding: 5px 12px;
+    padding: 4px 12px;
   }
   .cleo-card_img {
     top: 20px;
