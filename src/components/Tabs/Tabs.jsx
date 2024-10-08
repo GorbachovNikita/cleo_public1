@@ -73,7 +73,7 @@ const Tabs = () => {
                         <p>Support</p>
                         <img src={support_icon}/>
                     </Link>
-                    <Link to="/#">
+                    <Link to="/becomeaseller">
                         <p>Become a Seller</p>
                         <img src={become_a_seller_icon}/>
                     </Link>

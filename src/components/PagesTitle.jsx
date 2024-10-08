@@ -24,7 +24,8 @@ const PageTitle = ({ title }) => {
         '/support': 'Support',
         '/sellerpanel': 'Seller Panel',
         '/checker': 'Checker',
-        '/topup': 'Top up',
+        '/payment': 'Top up',
+        '/becomeaseller': 'Become a seller',
     }
 
     title = pagesTitle[location.pathname]

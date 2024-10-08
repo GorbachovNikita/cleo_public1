@@ -12,8 +12,8 @@ import Purchase from '../pages/Purchase/Purchase';
 import SellerPanel from "../pages/SellerPanel/SellerPanel";
 import Support from "../pages/Support/Support";
 import Checker from "../pages/Checker/Checker";
-import TopUp from "../pages/TopUp/TopUp";
 import Payment from '../pages/Payment/Payment';
+import BecomeASeller from "../pages/BecomeASeller/BecomeASeller";
 
 export const privateRouters = [
 
@@ -36,6 +36,6 @@ export const publicRoutes = [
     {path: '/purchase', element: Purchase},
     {path: '/sellerpanel', element: SellerPanel},
     {path: '/support', element: Support},
-    {path: '/topup', element: TopUp},
     {path: '/payment', element: Payment},
+    {path: '/becomeaseller', element: BecomeASeller},
 ]
