@@ -1,8 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './PaymentBlock.css';
 import PaymentQA from '../../../assets/img/payment-qa.png';
+import Modal from '../../../components/UI/Modal/Modal';
+import { Link } from 'react-router-dom';
 
 const PaymentBlock = () => {
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+  };
+  
   return (
     <div className='payment-container'>
       <div className='payment-block_qa'>
@@ -29,9 +41,9 @@ const PaymentBlock = () => {
 
         <div className="dropdown">
             <select id="currency" className='select-payment' >
-              <option value="USD">USD</option>
-              <option value="EUR">EUR</option>
-             <option value="BTC">BTC</option>
+              <option value="USD" className='option-pay'>USD</option>
+              <option value="EUR" className='option-pay'>EUR</option>
+             <option value="BTC" className='option-pay'>BTC</option>
             </select>
             <span className="arrow-payment"></span>
         </div>
@@ -50,7 +62,24 @@ const PaymentBlock = () => {
       </div>
       </div>
 
-      <button className='payment-btn'>Proceed to payment</button>
+      <button className='payment-btn' onClick={handleOpenModal}>
+        Proceed to payment
+      </button>
+
+      <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
+        <div className='modal-payment'>
+          <p className='modal-payment_title'>Thank you for your purchase!</p>
+          <span className='purchase-prod'></span>
+          <div className='modal-content_payment'>
+            <p className='modal-content_title'>Log 325644, Proxy 189273</p>
+            <span className='modal-content_price'>Price: 25$</span>
+          </div>
+          <span className='purchase-prod'></span>
+
+          <Link to="/" className='modal-link_payment'>Return to home</Link>
+        </div>
+      </Modal>
+
       </div>
     </div>
   )

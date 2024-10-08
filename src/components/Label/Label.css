@@ -5,30 +5,28 @@
   width: 200px;
   height: 70px;
   border-radius: 0 8px 8px 0;
-  background: linear-gradient(
-    253deg,
-    rgba(251, 219, 159, 1) 0%,
-    rgba(176, 138, 94, 1) 100%
-  );
+  background: var(--bg-color);
   position: absolute;
   margin-top: 15px;
+  border: 1px solid var(--border-color);
 }
 
 .titleShop {
   font-size: 24px;
   line-height: 90%;
-  margin-left: 70px;
+  margin-left: 50px;
   font-weight: 400;
 }
 
 @media screen and (max-width: 760px) {
   .label {
-    width: 120px;
+    width: 150px;
     height: 50px;
     margin-top: 10px;
   }
   .titleShop {
     font-size: 18px;
     padding-right: 47px;
+    margin-left: 60px;
   }
 }

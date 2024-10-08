@@ -1,0 +1,12 @@
+:root {
+  --bg-color: linear-gradient(
+    180deg,
+    rgba(251, 219, 159, 1) 0%,
+    rgba(176, 138, 94, 1) 100%,
+    rgba(251, 219, 159, 1) 100%
+  );
+   --primary-color: #171826;
+   --secondary-color: #FBDB9F;
+   --border-color: #B08A5E;
+   --border-secondary-color: #272845;
+}

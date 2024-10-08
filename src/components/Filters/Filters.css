@@ -2,13 +2,8 @@
   width: min-content;
   height: max-content;
   border-radius: 12px;
-  background: linear-gradient(
-    180deg,
-    rgba(251, 219, 159, 1) 0%,
-    rgba(176, 138, 94, 1) 100%,
-    rgba(251, 219, 159, 1) 100%
-  );
-  border: 1px solid #b08a5e;
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
   padding: 20px;
   margin-right: 10px;
   position: relative;
@@ -62,15 +57,15 @@
 }
 
 .apply-filter {
-  background: #fbdb9f;
-  border: 1px solid #171826;
-  color: #171826;
+  background: var(--secondary-color);
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
 }
 
 .clear-filter {
-  background: #171826;
-  border: 1px solid #b08a5e;
-  color: #fbdb9f;
+  background: var(--primary-color);
+  border: 1px solid var(--border-color);
+  color: var(--secondary-color);
 }
 
 .btn-filter-container {
@@ -87,11 +82,11 @@
   top: -50px;
   right: 3px;
   cursor: pointer;
-  color: #171826;
-  background: #fbdb9f;
+  color: var(--primary-color);
+  background: var(--secondary-color);
   padding: 10px 17px;
   border-radius: 6px;
-  border: 1px solid #b08a5e;
+  border: 1px solid var(--border-color);
   display: none;
 }
 
@@ -100,7 +95,7 @@
 }
 
 .select-p {
-  color: #fbdb9f;
+  color: var(--secondary-color);
   font-size: 13px;
 }
 
@@ -111,7 +106,7 @@
 }
 
 .select-number {
-  color: #fbdb9f;
+  color: var(--secondary-color);
   font-size: 10px;
 }
 

@@ -1,14 +1,9 @@
 .payment-container {
-  background: linear-gradient(
-    180deg,
-    rgba(251, 219, 159, 1) 0%,
-    rgba(176, 138, 94, 1) 100%,
-    rgba(251, 219, 159, 1) 100%
-  );
+  background: var(--bg-color);
   border-radius: 12px;
   margin: 0 auto;
   padding: 30px;
-  border: 1px solid #b08a5e;
+  border: 1px solid var(--border-color);
   height: fit-content;
   display: flex;
   justify-content: space-between;
@@ -22,35 +17,27 @@
 }
 
 .payment-block img {
-  max-width: 100%; /* Картинка не превышает ширину колонки */
+  max-width: 100%;
   height: auto;
 }
 
 .payment-title {
   font-weight: 500;
   margin-bottom: 15px;
-  color: #171826;
+  color: var(--primary-color);
 }
 
 .payment-btn {
   display: flex;
   align-items: center;
-  background: #171826;
-  color: #fbdb9f;
+  background: var(--primary-color);
+  color: var(--secondary-color);
   border-radius: 6px;
-  border: 1px solid #472f2b;
+  border: 1px solid var(--border-color);
   padding: 6px 40px;
   cursor: pointer;
   width: 100%;
   justify-content: center;
-}
-
-.input-payment {
-  background: #fbdb9f;
-  border-radius: 6px;
-  border: 1px solid #472f2b;
-  padding: 5px;
-  flex: 1;
 }
 
 .input-container {
@@ -67,11 +54,21 @@
 }
 
 .select-payment,
-.select-bank {
-  background: #fbdb9f;
+.select-bank,
+.input-payment {
+  background: var(--secondary-color);
   border: 1px solid #472f2b;
-  color: #171826;
   border-radius: 6px;
+  color: var(--primary-color);
+}
+
+.input-payment {
+  padding: 5px;
+  flex: 1;
+}
+
+.select-payment,
+.select-bank {
   padding: 5px 25px;
   appearance: none;
 }
@@ -83,14 +80,14 @@
 .arrow-payment {
   position: absolute;
   right: 8px;
-  top: 34%;
+  top: 30%;
   transform: translateY(-50%);
   width: 9px;
   height: 9px;
   background: url("../../../assets/icons/arrow-black.svg") no-repeat center;
   background-size: contain;
   pointer-events: none;
-  color: #171826;
+  color: var(--primary-color);
   appearance: none;
 }
 
@@ -120,7 +117,7 @@ input:focus {
   font-size: 13px;
   font-weight: 200;
   margin-bottom: 5px;
-  color: #171826;
+  color: var(--primary-color);
 }
 
 .input-mount {
@@ -129,9 +126,55 @@ input:focus {
   margin-bottom: 15px;
 }
 
+.option-pay {
+  background: #fbdb9f;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  padding: 3px;
+}
+
+.modal-payment {
+  padding: 20px;
+}
+
+.modal-payment_title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--primary-color);
+}
+
+.modal-content_payment {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 40px 20px 0;
+}
+
+.modal-content_title,
+.modal-content_price {
+  font-size: 13px;
+  color: var(--primary-color);
+  font-weight: 300;
+}
+
+.modal-link_payment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  text-decoration: underline;
+  font-size: 13px;
+  color: var(--primary-color);
+  font-weight: 300;
+}
+
 @media screen and (max-width: 1030px) {
   .payment-container {
-    flex-direction: column;
+    flex-direction: column-reverse;
     gap: 20px;
     justify-content: center;
     align-items: normal;
@@ -149,16 +192,38 @@ input:focus {
   }
   .input-payment {
     width: 100%;
+    font-size: 13px;
   }
 }
 
 @media screen and (max-width: 490px) {
-  .input-container {
-    flex-direction: column;
-  }
   .select-payment,
   .select-bank {
     padding: 5px 25px 5px 10px;
+    font-size: 13px;
+  }
+  .payment-container {
+    padding: 10px 10px 20px 10px;
+  }
+  .modal-payment_title {
+    flex-wrap: wrap;
+  }
+  .modal-payment {
+    padding: 10px;
+  }
+  .modal-content_payment {
+    margin: 20px 0px 20px 0;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .modal-content_title {
+    width: 100px;
+  }
+  .modal-payment_title {
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 

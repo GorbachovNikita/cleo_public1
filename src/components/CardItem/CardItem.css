@@ -1,217 +1,66 @@
-.card-item {
-  margin-top: 25px;
-  display: flex;
-  max-width: 100%;
-  background: linear-gradient(
-    180deg,
-    rgba(251, 219, 159, 1) 0%,
-    rgba(176, 138, 94, 1) 100%,
-    rgba(251, 219, 159, 1) 100%
-  );
-  border-radius: 6px;
-  padding: 20px;
-  border: 1px solid #272845;
+.list-block {
+  background: var(--bg-color);
+  border-radius: 12px;
+  margin: 0 auto;
+  padding: 30px;
   position: relative;
-  transition: box-shadow 0.3s ease;
+  flex: 1;
+  border: 1px solid var(--border-color);
 }
 
-.card-item:hover {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
-.card-column {
+.item-header {
   display: flex;
-  flex-direction: column;
-}
-
-.article-title {
-  color: #272845;
-  font-size: 16px;
-  font-family: "Prompt", sans-serif;
-  font-weight: 500;
-}
-
-.article-block {
-  display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: flex-end;
 }
 
-.article-counter {
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-}
-
-.article-p {
-  font-size: 12px;
-  color: #171826;
-  line-height: 140%;
-  margin-bottom: 5px;
-}
-
-.article-price {
-  font-size: 13px;
-  color: #171826;
-  position: absolute;
-  bottom: 67px;
-  right: 20px;
-}
-
-.counter-controls-card {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  border: 1px solid #171826;
-  background: none;
-  border-radius: 6px;
-  padding: 5px 20px;
-}
-
-.counter-btn {
-  background: none;
-  color: #171826;
-  border: none;
-}
-
-.counter-value {
-  color: #171826;
-  font-size: 13px;
-  margin: 0 10px;
-}
-
-.article-footer {
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  flex-direction: column;
-}
-
-.article-btn {
-  cursor: pointer;
-  border-radius: 6px;
-  background: #272845;
-  border: 1px solid #b08a5e;
-  color: #fbdb9f;
-  font-size: 13px;
-  width: 122px;
-  height: 41px;
-  bottom: 20px;
-  right: 20px;
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row-reverse;
-  gap: 6px;
-}
-
-/* СТИЛИ ДЛЯ ФИЛТРОВ У КАРТОЧКИ */
-.filter-card {
-  display: flex;
-  flex-direction: column;
-  margin: 20px 0 40px 0;
-}
-
-.filter-card-title {
-  font-size: 12px;
-  line-height: 140%;
-  font-weight: 200;
-}
-
-.filter-card-span {
-  font-size: 12px;
-  line-height: 140%;
+.item-title {
+  color: var(--primary-color);
+  font-size: 32px;
   font-weight: 400;
-}
-
-.cleo-card_img {
-  width: 120px;
-  height: 180px;
-  position: absolute;
-  right: 0;
-  background-image: url("../../assets/img/cleo-card.png");
-  background-size: cover;
-  background-position: center;
-}
-
-.popup {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.popup-content {
-  position: relative;
-  margin: 15% auto;
-  padding: 25px;
-  background: #171826;
-  border-radius: 5px;
-  width: 300px;
+  line-height: 90%;
+  flex-grow: 1;
   text-align: center;
-  color: #fbdb9f;
 }
 
-.close-btn {
-  color: #fbdb9f;
-  float: right;
-  font-size: 28px;
-  font-weight: 300;
-  cursor: pointer;
-  position: absolute;
-  top: -3px;
-  right: 13px;
+.block-warning {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 80px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.close-btn:hover,
-.close-btn:focus {
-  opacity: 0.7;
+.warning {
+  color: var(--primary-color);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 100%;
+  text-align: center;
 }
 
-.icon-money {
-  width: 16px;
-  height: 16px;
-}
-
-@media screen and (max-width: 821px) {
-  .cleo-card_img {
-    width: 100px;
-    height: 140px;
-    top: 40px;
+@media screen and (max-width: 1100px) {
+  .item-title {
+    font-size: 26px;
   }
 }
 
 @media screen and (max-width: 630px) {
-  .article-price {
-    bottom: 55px;
+  .list-block {
+    padding: 15px;
   }
-  .card-item {
-    padding: 12px;
-    margin-top: 20px;
-    height: 250px;
+  .item-title {
+    font-size: 22px;
   }
-  .article-title {
-    font-size: 14px;
+}
+
+@media screen and (max-width: 500px) {
+  .warning {
+    font-size: 16px;
+    font-weight: 600;
   }
-  .article-btn {
-    width: 113px;
-    bottom: 11px;
-    height: 37px;
-  }
-  .counter-controls-card {
-    padding: 4px 12px;
-  }
-  .cleo-card_img {
-    top: 20px;
-  }
-  .filter-card {
-    margin: 10px 0 20px 0;
+  .block-warning {
+    margin: 60px;
   }
 }

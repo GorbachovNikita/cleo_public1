@@ -1,17 +1,13 @@
+
 .card-list {
-  background: linear-gradient(
-    180deg,
-    rgba(251, 219, 159, 1) 0%,
-    rgba(176, 138, 94, 1) 100%,
-    rgba(251, 219, 159, 1) 100%
-  );
+  background: var(--bg-color);
   border-radius: 12px;
   margin: 0 auto;
   padding: 30px;
   position: relative;
   margin-bottom: 20px;
   flex: 1;
-  border: 1px solid #b08a5e;
+  border: 1px solid var(--border-color);
 }
 
 .item-header {
@@ -21,7 +17,7 @@
 }
 
 .item-title {
-  color: #171826;
+  color: var(--primary-color);
   font-size: 32px;
   font-weight: 400;
   line-height: 90%;
@@ -45,8 +41,8 @@
 
 .btn-cards {
   border-radius: 6px;
-  color: #171826;
-  background: #fbdb9f;
+  color: var(--primary-color);
+  background: var(--secondary-color);
   font-size: 16px;
   padding: 10px 80px;
   position: absolute;
@@ -58,12 +54,7 @@
 }
 
 .btn-cards:hover {
-  background: linear-gradient(
-    180deg,
-    rgba(251, 219, 159, 1) 0%,
-    rgba(176, 138, 94, 1) 100%,
-    rgba(251, 219, 159, 1) 100%
-  );
+  background: var(--bg-color);
 }
 
 .filter-container {
@@ -71,7 +62,7 @@
 }
 
 .filter-button {
-  background: #171826;
+  background: var(--primary-color);
   border-radius: 6px;
   border: 1px solid #472f2b;
   cursor: pointer;
@@ -93,14 +84,18 @@
   .grid-card {
     grid-template-columns: 1fr;
   }
-  .item-title {
-    font-size: 26px;
-  }
   .filter-container {
     display: flex;
     position: absolute;
     top: -50px;
     left: 0;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .card-list {
+    padding: 15px;
+    margin-bottom: 40px;
   }
 }
 
@@ -127,27 +122,13 @@
   .grid-card {
     padding: 0;
   }
-  .card-list {
-    padding: 15px;
-    margin-bottom: 40px;
-  }
   .btn-cards {
     width: 280px;
-  }
-  .item-title {
-    font-size: 22px;
   }
 }
 
 @media screen and (max-width: 360px) {
   .item-title {
     font-size: 16px;
-  }
-  .filter-container {
-    top: -50px;
-    left: 0;
-  }
-  .icon-filter {
-    padding: 7px 10px;
   }
 }

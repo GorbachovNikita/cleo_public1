@@ -1,14 +1,9 @@
 .cart-container {
-  background: linear-gradient(
-    180deg,
-    rgba(251, 219, 159, 1) 0%,
-    rgba(176, 138, 94, 1) 100%,
-    rgba(251, 219, 159, 1) 100%
-  );
+  background: var(--bg-color);
   border-radius: 12px;
   margin: 0 auto;
   padding: 30px;
-  border: 1px solid #b08a5e;
+  border: 1px solid var(--border-color);
   width: 100%;
   margin-left: 20px;
   height: fit-content;

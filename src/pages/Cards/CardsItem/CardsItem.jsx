@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../../../components/CardItem/CardItem';
+import './CardsItem.css';
 import MoneyIcon from '../../../assets/icons/money.svg';
 
 const CardsItem = ({ title, stock, price }) => {

@@ -12,7 +12,7 @@
   border-right: none;
   width: 250px;
   padding: 5px 10px;
-  color: #171826;
+  color: var(--primary-color);
   background: none;
   font-size: 13px;
   border-radius: 6px 0 0 6px;
@@ -23,11 +23,11 @@
 }
 
 .search-input::placeholder {
-  color: #171826;
+  color: var(--primary-color);
 }
 
 .search-button {
-  background: #171826;
+  background: var(--primary-color);
   border: 1px solid #472f2b;
   border-radius: 0 6px 6px 0;
   cursor: pointer;

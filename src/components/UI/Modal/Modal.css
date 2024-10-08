@@ -70,8 +70,8 @@
   .close-text {
     position: absolute;
     /* display: none; */
-    top: 0;
-    left: 13px;
+    top: 2px;
+    left: 15px;
   }
   .modal-close {
     width: 12px;
