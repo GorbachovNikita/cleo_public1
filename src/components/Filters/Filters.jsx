@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 import './Filters.css';
 import CustomSelect from '../Select/Select';
 import { InputRange } from '../InputRange/InputRange';
-import CloseIcon from '../../assets/icons/close.svg'
+import CloseIcon from '../../assets/icons/close.svg';
+import Search from '../Search/Search';
 
 const Fiters = (props) => {
   const {labels, options, isOpen, setIsOpen } = props;
@@ -37,6 +38,8 @@ const Fiters = (props) => {
             return <CustomSelect key={label} label={label} options={options}/>
         })
       }
+
+      <Search />
          
         <div className='select'>
           <p className='select-p'>Price, $</p>
