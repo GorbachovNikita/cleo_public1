@@ -1,16 +1,11 @@
 .card-list-news {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background: linear-gradient(
-    180deg,
-    rgba(251, 219, 159, 1) 0%,
-    rgba(176, 138, 94, 1) 100%,
-    rgba(251, 219, 159, 1) 100%
-  );
+  background: var(--bg-color);
   border-radius: 12px;
   margin: 0 auto;
   gap: 20px;
-  border: 1px solid #b08a5e;
+  border: 1px solid var(--border-color);
   padding-bottom: 80px;
   position: relative;
   max-width: 100%;
@@ -27,14 +22,14 @@
 .btn {
   border-radius: 6px;
   color: #fbdb9f;
-  background: #171826;
+  background: var(--primary-color);
   font-size: 16px;
   padding: 10px 80px;
   position: absolute;
   bottom: -55px;
   cursor: pointer;
   font-weight: 500;
-  border: 1px solid #472f2b;
+  border: 1px solid var(--border-secondary-color);
 }
 
 @media screen and (max-width: 1400px) {

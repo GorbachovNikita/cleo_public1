@@ -2,15 +2,10 @@
   margin-top: 25px;
   display: flex;
   max-width: 100%;
-  background: linear-gradient(
-    180deg,
-    rgba(251, 219, 159, 1) 0%,
-    rgba(176, 138, 94, 1) 100%,
-    rgba(251, 219, 159, 1) 100%
-  );
+  background: var(--bg-color);
   border-radius: 6px;
   padding: 20px;
-  border: 1px solid #272845;
+  border: 1px solid var(--border-secondary-color);
   position: relative;
 }
 
@@ -20,7 +15,7 @@
 }
 
 .article-title {
-  color: #272845;
+  color: var(--border-secondary-color);
   font-size: 16px;
   font-family: "Prompt", sans-serif;
   font-weight: 500;
@@ -40,21 +35,22 @@
 
 .article-p {
   font-size: 12px;
-  color: #171826;
+  color: var(--border-secondary-color);
   line-height: 140%;
   margin-bottom: 5px;
+  font-weight: 100;
 }
 
 .article-price {
   font-size: 13px;
-  color: #171826;
+  color: var(--border-secondary-color);
 }
 
 .counter-controls-card {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  border: 1px solid #171826;
+  border: 1px solid var(--border-secondary-color);
   background: none;
   border-radius: 6px;
   padding: 5px 20px;
@@ -62,12 +58,12 @@
 
 .counter-btn {
   background: none;
-  color: #171826;
+  color: var(--border-secondary-color);
   border: none;
 }
 
 .counter-value {
-  color: #171826;
+  color: var(--border-secondary-color);
   font-size: 13px;
   margin: 0 10px;
 }
@@ -86,9 +82,9 @@
 .article-btn {
   cursor: pointer;
   border-radius: 6px;
-  background: #272845;
-  border: 1px solid #b08a5e;
-  color: #fbdb9f;
+  background: var(--border-secondary-color);
+  border: 1px solid var(--border-color);
+  color: var(--secondary-color);
   font-size: 13px;
   width: 100px;
   height: 36px;

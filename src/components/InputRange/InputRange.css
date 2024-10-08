@@ -3,12 +3,12 @@ input[type="range"] {
   outline: none;
   border: none;
   width: 100%;
-  accent-color: #ffd78c99;
+  accent-color: var(--secondary-color);
   bottom: 15px;
 }
 
 input[type="range"]::-webkit-slider-runnable-track {
-  background: #ffd28599;
+  background: var(--secondary-color);
   border-radius: 2px;
   height: 2px;
 }

@@ -1,7 +1,7 @@
 .select {
-  background: #171826;
+  background: var(--primary-color);
   border: 1px solid #472f2b;
-  color: #fbdb9f;
+  color: var(--secondary-color);
   border-radius: 6px;
   width: 170px;
   padding: 5px;

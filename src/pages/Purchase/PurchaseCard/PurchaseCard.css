@@ -13,7 +13,7 @@
 }
 
 .purchase-title {
-  color: #171826;
+  color: var(--primary-color);
   font-size: 16px;
   font-weight: 500;
   font-family: "Prompt", sans-serif;
@@ -26,13 +26,13 @@
 
 .purchase-style {
   font-size: 13px;
-  color: #171826;
+  color: var(--primary-color);
   font-weight: 100;
 }
 
 .purchase-style_number {
   font-size: 13px;
-  color: #171826;
+  color: var(--primary-color);
   font-weight: 100;
 }
 

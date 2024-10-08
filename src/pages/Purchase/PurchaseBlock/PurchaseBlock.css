@@ -1,14 +1,9 @@
 .purchase-container {
-  background: linear-gradient(
-    180deg,
-    rgba(251, 219, 159, 1) 0%,
-    rgba(176, 138, 94, 1) 100%,
-    rgba(251, 219, 159, 1) 100%
-  );
+  background: var(--bg-color);
   border-radius: 6px;
   margin: 0 auto;
   padding: 30px 30px 10px 30px;
-  border: 1px solid #b08a5e;
+  border: 1px solid var(--border-color);
   width: 80%;
 }
 
@@ -40,7 +35,7 @@
 .purchase-dec {
   display: block;
   height: 1px;
-  background-color: #1718266a;
+  background-color: #17182645;
   margin: 10px 0;
   width: 95%;
 }
@@ -61,7 +56,7 @@
 .purchase-prod {
   display: block;
   height: 1px;
-  background-color: #1718262a;
+  background-color :#17182645;
   margin: 10px 0;
   width: 95%;
 }
@@ -70,12 +65,12 @@
   width: 80px;
   height: 50px;
   background: #fbdb9f;
-  border: 1px solid #472f2b;
+  border: 1px solid var(--border-color);
   border-radius: 6px;
 }
 
 .purchase-cash {
-  color: #171826;
+  color: var(--primary-color);
   font-size: 13px;
 }
 
@@ -96,7 +91,7 @@
 .quantity {
   font-size: 13px;
   font-weight: 300;
-  color: #171826;
+  color: var(--primary-color);
 }
 
 .purchase-footer {
@@ -114,7 +109,7 @@
 .discount-title {
   font-size: 13px;
   font-weight: 300;
-  color: #171826;
+  color: var(--primary-color);
 }
 
 .total-block {

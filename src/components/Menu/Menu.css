@@ -14,7 +14,7 @@
 }
 
 .menu-button {
-  background: #171826;
+  background: var(--primary-color);
   border: 1px solid #472f2b;
   padding: 8px 80px;
   border-radius: 6px;
@@ -33,13 +33,8 @@
   display: flex;
   flex-direction: column;
   border-radius: 12px;
-  background: linear-gradient(
-    180deg,
-    rgba(251, 219, 159, 1) 0%,
-    rgba(176, 138, 94, 1) 100%,
-    rgba(251, 219, 159, 1) 100%
-  );
-  border: 1px solid #b08a5e;
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
   padding: 20px;
   position: absolute;
   z-index: 1000;
@@ -50,8 +45,8 @@
 .menu-button_mobile {
   width: 288px;
   height: 36px;
-  background: #171826;
-  color: #fbdb9f;
+  background: var(--primary-color);
+  color: var(--secondary-color);
   border-radius: 6px;
   margin-top: 10px;
   display: flex;
@@ -62,14 +57,14 @@
 
 .close-button_menu {
   cursor: pointer;
-  color: #171826;
-  background: #fbdb9f;
+  color: var(--primary-color);
+  background: var(--secondary-color);
   padding: 11px 15px;
   border-radius: 6px;
-  border: 1px solid #b08a5e;
-  position: absolute; /* Позиционирование относительно родительского элемента */
-  top: 10px; /* Расстояние от верхней части экрана */
-  right: 2px; /* Расстояние от правой части экрана */
+  border: 1px solid var(--border-color);
+  position: absolute;
+  top: 10px;
+  right: 2px;
   z-index: 1001;
 }
 
