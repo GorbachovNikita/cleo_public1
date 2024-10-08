@@ -9,7 +9,7 @@ const Label = () => {
        <Link to="/" aria-label="News">
           <h1 className='titleShop'>
             Cleopatra’s
-            .shop
+            Shop
         </h1>
        </Link>
     </div>

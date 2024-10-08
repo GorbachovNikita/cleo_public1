@@ -25,9 +25,9 @@ const Tabs = () => {
                 </h3>
                 <div className='tab-buttons'>
 
-                    <Link to="/topup" className='btnHeader' aria-label="Top up balance">
+                    <Link to="/payment" className='btnHeader' aria-label="Top up balance">
                         Top up
-                        <img src={TopUpIcon} alt="Top up" className='icon'/>
+                        <img src={TopUpIcon} alt="Payment" className='icon'/>
                     </Link>
 
                     <Link to="/cart" className='btnHeader' aria-label="View cart">

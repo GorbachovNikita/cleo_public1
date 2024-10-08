@@ -1,12 +1,15 @@
 import React from 'react'
-import './Support.page.css'
 import Header from "../../components/Header/Header";
+import SupportBlock from './SupportBlock/SupportBlock';
 
 const Support = () => {
 
     return (
         <div>
             <Header/>
+            <div className='container'>
+                <SupportBlock />
+            </div>
         </div>
     );
 };
