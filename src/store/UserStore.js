@@ -432,6 +432,7 @@ export default class UserStore {
             return {}
         }
     }
+
     /**
      * 
      * @param category - строка - slug категории
