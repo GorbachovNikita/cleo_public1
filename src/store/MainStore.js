@@ -77,7 +77,7 @@ export default class MainStore {
             return r.content
 
         } catch (error) {
-            this._latestError = r.message
+            this._latestError = error.message
             return this._currencies
         }
     }

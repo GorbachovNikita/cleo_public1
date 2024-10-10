@@ -4,6 +4,7 @@ import TopUpIcon from '../../assets/icons/top-up.svg';
 import CartIcon from '../../assets/icons/cart.svg';
 import PersonIcon from '../../assets/icons/person.svg';
 import {Link} from 'react-router-dom';
+import Balance from '../Balance/Balance';
 
 import profile_icon from '../../assets/img/tabs/profile_icon.svg'
 import my_purchases_icon from '../../assets/img/tabs/my_purchases_icon.svg'
@@ -13,6 +14,7 @@ import support_icon from '../../assets/img/tabs/support_icon.svg'
 import become_a_seller_icon from '../../assets/img/tabs/become_a_seller_icon.svg'
 import logout_icon from '../../assets/img/tabs/logout_icon.svg'
 
+
 const Tabs = () => {
 
     const [profileMenuDisplay, setProfileMenuDisplay] = useState('none')
@@ -21,7 +23,7 @@ const Tabs = () => {
         <div>
             <div className='content-tabs'>
                 <h3 className='titleHeader'>
-                    Balance: <span className='spanTitle'>$300</span>
+                   <Balance />
                 </h3>
                 <div className='tab-buttons'>
 

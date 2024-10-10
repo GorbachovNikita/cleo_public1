@@ -249,7 +249,7 @@ export default class UserStore {
 
             this._latestError = r.message
             return r.content
-        } catch (error) {
+        } catch (e) {
             this._latestError = e.message
             return {}
         }
@@ -303,7 +303,7 @@ export default class UserStore {
 
             this._latestError = r.message
             return r.content
-        } catch (error) {
+        } catch (e) {
             this._latestError = e.message
             return {}
         }
@@ -357,7 +357,7 @@ export default class UserStore {
 
             this._latestError = r.message
             return r.content.positions
-        } catch (error) {
+        } catch (e) {
             this._latestError = e.message
             return []
         }
@@ -427,7 +427,7 @@ export default class UserStore {
 
             this._latestError = r.message
             return r.content
-        } catch (error) {
+        } catch (e) {
             this._latestError = e.message
             return {}
         }
@@ -461,7 +461,7 @@ export default class UserStore {
 
             this._latestError = r.message
             return r.content.uuid
-        } catch (error) {
+        } catch (e) {
             this._latestError = e.message
             return ""
         }
