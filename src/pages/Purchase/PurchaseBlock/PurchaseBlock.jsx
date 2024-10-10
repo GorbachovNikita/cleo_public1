@@ -34,6 +34,8 @@ const PurchaseBlock = () => {
 
         const response = user.getPositionByPurchare(uuid)
 
+        console.log(response)
+
         if (Object.keys(response).length !== 0) {
 
             setTotalprice(price)
@@ -81,6 +83,9 @@ const PurchaseBlock = () => {
     useEffect(() => {
 
         getPurchasesListFunction().then(data => {
+
+            console.log(data)
+
             if (data !== undefined) {
 
                 if (data !== 0 && data.length !== 0) {

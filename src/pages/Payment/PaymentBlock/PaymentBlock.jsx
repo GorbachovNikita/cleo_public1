@@ -22,6 +22,8 @@ const PaymentBlock = () => {
 
       const response = await user.createPayment(currency, usdt_amount)
 
+      console.log(response)
+
       if (Object.keys(response).length !== 0) {
 
         setModalOpen(true)
