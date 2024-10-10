@@ -83,7 +83,7 @@ const PurchaseBlock = () => {
         getPurchasesListFunction().then(data => {
             if (data !== undefined) {
 
-                if (data.length !== 0) {
+                if (data !== 0 && data.length !== 0) {
 
                     setPurchasesData(data.map((item, index) =>
                         <PurchaseCard
