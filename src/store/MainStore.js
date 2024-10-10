@@ -1,5 +1,5 @@
 import { get, makeAutoObservable } from "mobx"
-import { $auth$authHost, Host, $authau$authHost } from "../http"
+import { $authHost, $host } from "../http"
 
 export default class MainStore {
 
