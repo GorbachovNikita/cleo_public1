@@ -1,5 +1,5 @@
 import { get, makeAutoObservable } from "mobx"
-import { $host, $authHost } from "../http"
+import { $auth$authHost, Host, $authau$authHost } from "../http"
 
 export default class MainStore {
 
@@ -66,7 +66,7 @@ export default class MainStore {
      */
     async getAllCurrencies() {
         try {
-            let r = (await $host.get("/currency/get_all")).data
+            let r = (await $authHost.get("/currency/get_all")).data
             if (!r.ok) {
                 this._latestError = r.message
                 return this._currencies
@@ -106,7 +106,7 @@ export default class MainStore {
      */
     async getCategories() {
         try {
-            let r = (await $host.get("/category/get_all_visible")).data
+            let r = (await $authHost.get("/category/get_all_visible")).data
 
             if (!r.ok) {
                 this._latestError = r.message
@@ -139,7 +139,7 @@ export default class MainStore {
      */
     async getCategoryBySlug(slug) {
         try {
-            let r = (await $host.get(`/category/get/${slug}`)).data
+            let r = (await $authHost.get(`/category/get/${slug}`)).data
 
             if (!r.ok) {
                 this._latestError = r.message
@@ -166,7 +166,7 @@ export default class MainStore {
      */
     async getCountries() {
         try {
-            let r = (await $host.get("/country/get_in_stock")).data
+            let r = (await $authHost.get("/country/get_in_stock")).data
 
             if (!r.ok) {
                 this._latestError = r.message
@@ -193,7 +193,7 @@ export default class MainStore {
      */
     async getBins() {
         try {
-            let r = (await $host.get("/bin/list")).data
+            let r = (await $authHost.get("/bin/list")).data
 
             if (!r.ok) {
                 this._latestError = r.message
@@ -225,7 +225,7 @@ export default class MainStore {
 
         if (countrySlug && !categorySlug) {
             try {
-                let r = (await $host.get(`/bin/country_list/${countrySlug}`)).data
+                let r = (await $authHost.get(`/bin/country_list/${countrySlug}`)).data
 
                 if (!r.ok) {
                     this._latestError = r.message
@@ -240,7 +240,7 @@ export default class MainStore {
             }
         } else if (!countrySlug && categorySlug) {
             try {
-                let r = (await $host.get(`/bin/category_list/${categorySlug}`)).data
+                let r = (await $authHost.get(`/bin/category_list/${categorySlug}`)).data
 
                 if (!r.ok) {
                     this._latestError = r.message
@@ -255,7 +255,7 @@ export default class MainStore {
             }
         } else if (categorySlug && countrySlug) {
             try {
-                let r = (await $host.get(`/bin/get_by_category_and_country?category=${categorySlug}&country=${countrySlug}`)).data
+                let r = (await $authHost.get(`/bin/get_by_category_and_country?category=${categorySlug}&country=${countrySlug}`)).data
 
                 if (!r.ok) {
                     this._latestError = r.message
@@ -283,7 +283,7 @@ export default class MainStore {
      */
     async getPositionsInStock() {
         try {
-            let r = (await $host.get("/position/get_amount_in_stock")).data
+            let r = (await $authHost.get("/position/get_amount_in_stock")).data
 
             if (!r.ok) {
                 this._latestError = r.message
