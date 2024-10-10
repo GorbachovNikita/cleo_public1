@@ -241,7 +241,7 @@ export default class UserStore {
             return 0
         }
         try {
-            let r = (await $authHost.post("/payment/create", { data: { currency, usdt_amount } })).data
+            let r = (await $authHost.post("/payment/create", { data: { currency, usdt_amount, callback_url: "" } })).data
             if (!r.ok) {
                 this._latestError = r.message
                 return {}
@@ -454,6 +454,7 @@ export default class UserStore {
                     bin,
                     amount,
                     checker_enabled,
+                    callback_url: ""
                 }
             })).data
             if (!r.ok) {
