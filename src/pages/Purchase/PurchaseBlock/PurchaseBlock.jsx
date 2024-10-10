@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import './PurchaseBlock.css';
 import PurchaseCard from '../PurchaseCard/PurchaseCard';
 import Modal from '../../../components/UI/Modal/Modal';
+import {Context} from "../../../index";
 
 const purchaseData = [
     { id: 1, title: 'Purchase #7378328', date: '24.09.2024'},
@@ -16,6 +17,9 @@ export const purchase = [
 ];
 
 const PurchaseBlock = () => {
+
+    const {user} = useContext(Context)
+
     const [isModalOpen, setModalOpen] = useState(false);
 
     const handleCardClick = () => {
