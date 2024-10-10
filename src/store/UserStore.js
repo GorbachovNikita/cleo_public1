@@ -1,5 +1,5 @@
-import { get, makeAutoObservable } from "mobx"
-import { $host, $authHost } from "../http"
+import {makeAutoObservable} from "mobx"
+import {$authHost} from "../http"
 
 export default class UserStore {
 
@@ -241,7 +241,7 @@ export default class UserStore {
             return 0
         }
         try {
-            let r = (await $authHost.post("/payment/create", { data: { currency, usdt_amount } })).data
+            let r = (await $authHost.post("/payment/create", {data: {currency, usdt_amount}})).data
             if (!r.ok) {
                 this._latestError = r.message
                 return {}
@@ -249,7 +249,7 @@ export default class UserStore {
 
             this._latestError = r.message
             return r.content
-        } catch (error) {
+        } catch (e) {
             this._latestError = e.message
             return {}
         }
@@ -303,7 +303,7 @@ export default class UserStore {
 
             this._latestError = r.message
             return r.content
-        } catch (error) {
+        } catch (e) {
             this._latestError = e.message
             return {}
         }
@@ -357,7 +357,7 @@ export default class UserStore {
 
             this._latestError = r.message
             return r.content.positions
-        } catch (error) {
+        } catch (e) {
             this._latestError = e.message
             return []
         }
@@ -427,7 +427,7 @@ export default class UserStore {
 
             this._latestError = r.message
             return r.content
-        } catch (error) {
+        } catch (e) {
             this._latestError = e.message
             return {}
         }
@@ -463,7 +463,7 @@ export default class UserStore {
 
             this._latestError = r.message
             return r.content.uuid
-        } catch (error) {
+        } catch (e) {
             this._latestError = e.message
             return ""
         }
