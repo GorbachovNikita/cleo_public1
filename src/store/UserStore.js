@@ -11,18 +11,35 @@ export default class UserStore {
         }
         this._latestError = ""
         makeAutoObservable(this)
+        let token = localStorage.getItem('token')
+        if (token) {
+            getClientData()
+        } else {
+            localStorage.removeItem("token")
+        }
     }
 
     // TODO !!
     auth(options) {
 
     }
-
+    /**
+     * Возвращает кешированного юзера без служебных данных, чтобы случайно не вывели
+     */
+    get user() {
+        return {
+            uuid: this._user.uuid,
+            join_date: this._user.join_date,
+            is_banned: this._user.is_banned,
+            referral_percentage: this._user.referral_percentage,
+            sales_percentage: this._user.sales_percentage,
+            balance: this._user.balance,
+        }
+    }
     // отдает последнюю ошибку полученую при сетевом запросе
     get latestError() {
         return this._latestError
     }
-
     /**
      * получает баланс пользователя, если произошла ошибка,
      * выводит последный полученый баланс, а ошибку прописывает в _latestError
@@ -33,7 +50,7 @@ export default class UserStore {
      */
     async getBalance() {
         if (!this._isAuth) {
-            this._latestError = "Unauthorized"
+            this._latestError = "authentication error"
             return 0
         }
         try {
@@ -52,10 +69,11 @@ export default class UserStore {
             return this._user.balance
         }
     }
-
     /**
      * получает покупку (или как оно правильно переводится)
      * при ошибке выводит ее в _latestError и выдает пустой объект
+     * 
+     * fetches purchase data by it`s UUID
      * 
      * @param {*} puuid - string - uuid покупки
      * @returns {
@@ -72,7 +90,7 @@ export default class UserStore {
      */
     async getPurchase(puuid) {
         if (!this._isAuth) {
-            this._latestError = "Unauthorized"
+            this._latestError = "authentication error"
             return 0
         }
         try {
@@ -90,10 +108,11 @@ export default class UserStore {
             return {}
         }
     }
-
     /**
      * получает все покупки (или как оно правильно переводится)
      * при ошибке выводит ее в _latestError и выдает пустой массив
+     * 
+     * fetches a list of client`s purchases by his UUID
      * 
      * @returns [
      *     {
@@ -122,7 +141,7 @@ export default class UserStore {
      */
     async getPurchasesList() {
         if (!this._isAuth) {
-            this._latestError = "Unauthorized"
+            this._latestError = "authentication error"
             return 0
         }
         try {
@@ -139,7 +158,6 @@ export default class UserStore {
             return []
         }
     }
-
     /**
      * получает платеж
      * при ошибке выводит ее в _latestError и выдает пустой объект
@@ -162,7 +180,7 @@ export default class UserStore {
      */
     async getPayment(puuid) {
         if (!this._isAuth) {
-            this._latestError = "Unauthorized"
+            this._latestError = "authentication error"
             return 0
         }
         try {
@@ -179,10 +197,13 @@ export default class UserStore {
             return {}
         }
     }
-
     /**
      * получает историю платежей
      * при ошибке выводит ее в _latestError и выдает пустой массив
+     * 
+     * Есть еще один подобный метод, но я хз какой правильный
+     * 
+     * А вот этого метода в проиватной доке нет
      * 
      * @returns [
      *     {
@@ -202,7 +223,7 @@ export default class UserStore {
      */
     async getPaymentsHistory() {
         if (!this._isAuth) {
-            this._latestError = "Unauthorized"
+            this._latestError = "authentication error"
             return 0
         }
         try {
@@ -219,10 +240,11 @@ export default class UserStore {
             return []
         }
     }
-
     /**
      * создает платеж
      * при ошибке выводит ее в _latestError и выдает пустой объект
+     * 
+     * creates a new payment
      * 
      * @param {*} currency - string - название валюты
      * @param {*} usdt_amount - number(int/float) - сумма в usdt
@@ -237,7 +259,7 @@ export default class UserStore {
      */
     async createPayment(currency, usdt_amount) {
         if (!this._isAuth) {
-            this._latestError = "Unauthorized"
+            this._latestError = "authentication error"
             return 0
         }
         try {
@@ -256,46 +278,20 @@ export default class UserStore {
     }
     /**
      * 
-     * Получает позиции закупок по uuid юзера
+     * Ну я реализовал, но пока хз что это и что возвращает
+     * Да в закрытых доках его нет
      * 
-     * @returns [
-     *     {
-     *         "uuid": "123fd21d-7216-4e50-b91d-fb625d95d0c7",
-     *         "category": "high-valid-cc-no-refund-3",
-     *         "country": "united-states",
-     *         "data": "CC_STRING",
-     *         "seller": "90hf0ce0-48f9-4019-97dc-1edb530dad33",
-     *         "upload": "654dcb3c-5996-406d-801e-fb6ae6f347ea",
-     *         "bin": 524452,
-     *         "is_loaded": true,
-     *         "purchase": "9hg2e55f-c2c8-4dd2-aed1-8f58cb5a7608",
-     *         "is_refunded": false,
-     *         "is_purchased": true,
-     *         "buyer": "0f456e68-6566-4796-a4b6-9182b5abadb1"
-     *     },
-     *     {
-     *         "uuid": "321b084c-c296-48c5-a990-9c1dd8a67a3b",
-     *         "category": "high-valid-cc-no-refund-3",
-     *         "country": "japan",
-     *         "data": "CC_STRING",
-     *         "seller": "90hf0ce0-48f9-4019-97dc-1edb530dad33",
-     *         "upload": "654dcb3c-5996-406d-801e-fb6ae6f347ea",
-     *         "bin": 461676,
-     *         "is_loaded": true,
-     *         "purchase": "768b9c88-3e2b-450e-b598-95b78ebb4523",
-     *         "is_refunded": false,
-     *         "is_purchased": true,
-     *         "buyer": "of456e68-6566-4796-a4b6-9182b5abadb1"
-     *     }
-     * ]
+     * @param {*} categorySlug 
+     * @param {*} countrySlug 
+     * @returns 
      */
-    async getPositionByBuyer() {
+    async getDiscountedPrice(categorySlug, countrySlug) {
         if (!this._isAuth) {
-            this._latestError = "Unauthorized"
-            return 0
+            this._latestError = "authentication error"
+            return {}
         }
         try {
-            let r = (await $authHost.get(`/position/get_by_buyer_uuid/${this._user.uuid}`)).data
+            let r = (await $authHost.get(`/discount/get_discounted_price?uuid=${this._user.uuid}&category_slug=${categorySlug}&country_slug=${countrySlug}`)).data
             if (!r.ok) {
                 this._latestError = r.message
                 return {}
@@ -309,167 +305,96 @@ export default class UserStore {
         }
     }
     /**
-     * получает позиции из заказа, да только позиции без деталей самого заказа
+     * fetches count of client`s purchases by his UUID
      * 
-     * @param uuid - строка - uuid заказа
-     * @returns [
-     *     {
-     *         "uuid": "123fd21d-7216-4e50-b91d-fb625d95d0c7",
-     *         "category": "high-valid-cc-no-refund-3",
-     *         "country": "united-states",
-     *         "data": "CC_STRING",
-     *         "seller": "90hf0ce0-48f9-4019-97dc-1edb530dad33",
-     *         "upload": "654dcb3c-5996-406d-801e-fb6ae6f347ea",
-     *         "bin": 524452,
-     *         "is_loaded": true,
-     *         "purchase": "9hg2e55f-c2c8-4dd2-aed1-8f58cb5a7608",
-     *         "is_refunded": false,
-     *         "is_purchased": true,
-     *         "buyer": "0f456e68-6566-4796-a4b6-9182b5abadb1"
-     *     },
-     *     {
-     *         "uuid": "321b084c-c296-48c5-a990-9c1dd8a67a3b",
-     *         "category": "high-valid-cc-no-refund-3",
-     *         "country": "japan",
-     *         "data": "CC_STRING",
-     *         "seller": "90hf0ce0-48f9-4019-97dc-1edb530dad33",
-     *         "upload": "654dcb3c-5996-406d-801e-fb6ae6f347ea",
-     *         "bin": 461676,
-     *         "is_loaded": true,
-     *         "purchase": "768b9c88-3e2b-450e-b598-95b78ebb4523",
-     *         "is_refunded": false,
-     *         "is_purchased": true,
-     *         "buyer": "of456e68-6566-4796-a4b6-9182b5abadb1"
-     *     }
-     * ]
+     * @returns int
      */
-    async getPositionByPurchare(uuid) {
+    async getPurchasesAmountByClient() {
         if (!this._isAuth) {
-            this._latestError = "Unauthorized"
-            return 0
+            this._latestError = "authentication error"
+            return {}
         }
         try {
-            let r = (await $authHost.get(`/position/get_by_purchase_uuid/${uuid}`)).data
+            let r = (await $authHost.get(`/purchase/get_user_amount/${this._user.uuid}`)).data
             if (!r.ok) {
                 this._latestError = r.message
-                return []
+                return 0
             }
 
             this._latestError = r.message
-            return r.content.positions
+            return r.content.count
         } catch (error) {
             this._latestError = e.message
-            return []
+            return 0
         }
     }
-
     /**
+     * fetches link data by it`s client owner UUID
      * 
-     * проверяет существование заказа, если я правильно понял, ну и получает по нему инфу
-     * 
-     * @param uuid - строка - uuid заказа
      * @returns {
-     *     'was_missing': False,
-     *     'positions': [
-     *         {
-     *             "uuid": "123fd21d-7216-4e50-b91d-fb625d95d0c7",
-     *             "category": "high-valid-cc-no-refund-3",
-     *             "country": "united-states",
-     *             "data": "CC_STRING",
-     *             "seller": "90hf0ce0-48f9-4019-97dc-1edb530dad33",
-     *             "upload": "654dcb3c-5996-406d-801e-fb6ae6f347ea",
-     *             "bin": 524452,
-     *             "is_loaded": true,
-     *             "purchase": "9hg2e55f-c2c8-4dd2-aed1-8f58cb5a7608",
-     *             "is_refunded": false,
-     *             "is_purchased": true,
-     *             "buyer": "0f456e68-6566-4796-a4b6-9182b5abadb1"
-     *         },
-     *         {
-     *             "uuid": "321b084c-c296-48c5-a990-9c1dd8a67a3b",
-     *             "category": "high-valid-cc-no-refund-3",
-     *             "country": "japan",
-     *             "data": "CC_STRING",
-     *             "seller": "90hf0ce0-48f9-4019-97dc-1edb530dad33",
-     *             "upload": "654dcb3c-5996-406d-801e-fb6ae6f347ea",
-     *             "bin": 461676,
-     *             "is_loaded": true,
-     *             "purchase": "768b9c88-3e2b-450e-b598-95b78ebb4523",
-     *             "is_refunded": false,
-     *             "is_purchased": true,
-     *             "buyer": "of456e68-6566-4796-a4b6-9182b5abadb1"
-     *         }
-     *     ],
-     *     'purchase': {
-     *         "uuid": '8a53a159-f9d5-4052-af75-0e7d565febfc',
-     *         "user": '2a53a159-f9d5-4012-af75-0e7d555febzz',
-     *         "purchase_time": "2024-05-03T03:11:13.838720",
-     *         "paid_amount": 0.0,
-     *         "quantity": 1,
-     *         "refunded_quantity": 1,
-     *         "category": 'category',
-     *         "country": 'country',
-     *         "bin": 541123
-     *     }
+     *     "uuid": "90ed51b1-9980-4c21-83c0-858a6ca1322l",
+     *     "code": "sFWs12S-siL",
+     *     "is_commercial": False,
+     *     "user": "0p43dc26-2339-4f64-a6b3-2376c48c9ae7"
      * }
      */
-    async verifyPositionInPurchareByPurchare(uuid) {
+    async getReferralLink() {
         if (!this._isAuth) {
-            this._latestError = "Unauthorized"
-            return 0
+            this._latestError = "authentication error"
+            return {}
         }
         try {
-            let r = (await $authHost.get(`/position/verify/{uuid}`)).data
+            let r = (await $authHost.get(`/link/get_by_user_uuid/${this._user.uuid}`)).data
             if (!r.ok) {
                 this._latestError = r.message
-                return {}
+                return 0
             }
 
             this._latestError = r.message
             return r.content
         } catch (error) {
             this._latestError = e.message
-            return {}
+            return 0
         }
     }
     /**
+     * fetches client data by client`s token
      * 
-     * @param category - строка - slug категории
-     * @param bin - чиселка - сам bin
-     * @param amount - чиселка - количество товара
-     * @param checker_enabled - булеан - что-то про автовозврат (цитата из api reference: buy with autorefund or without (true is available only for
-    categories where checker_enabled field is true))
-
-     * @returns uuid заказа
+     * В случае успеха кешируется
+     * 
+     * @returns {
+     *     "uuid": "21e073eb-b693-47da-9279-d09cf3zoc55c",
+     *     "token": "%12Gb&%_zZz?[|,sdfwej3:*sd#JAR@7yji0",
+     *     "referral_uuid": None,
+     *     "join_date": "2024-05-01T17:31:31.710252",
+     *     "is_banned": False,
+     *     "referral_percentage": 5,
+     *     "sales_percentage": 0,
+     *     "permission": 3,
+     *     "balance": 0
+     * }
      */
-    async purchasePositionByCategoryAndBin(category, bin, amount, checker_enabled) {
+    async getClientData() {
         if (!this._isAuth) {
-            this._latestError = "Unauthorized"
-            return ""
+            this._latestError = "authentication error"
+            return {}
         }
         try {
-            let r = (await $authHost.post(`/position/purchase`, {
-                data: {
-                    category,
-                    bin,
-                    amount,
-                    checker_enabled,
-                    callback_url: ""
-                }
-            })).data
+            let r = (await $authHost.get(`/client/get_by_token`)).data
             if (!r.ok) {
                 this._latestError = r.message
-                return ""
+                return {}
             }
 
             this._latestError = r.message
-            return r.content.uuid
+            this._user = r.content.user
+            this._isAuth = true
+            return r.content.user
         } catch (error) {
             this._latestError = e.message
-            return ""
+            return {}
         }
     }
-
     setIsAuth(bool) {
         this._isAuth = bool
     }
@@ -486,5 +411,3 @@ export default class UserStore {
         return this._user
     }
 }
-
-let t = 1
