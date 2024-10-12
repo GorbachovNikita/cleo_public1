@@ -1,5 +1,5 @@
-import { get, makeAutoObservable } from "mobx"
-import { $host, $authHost } from "../http"
+import {makeAutoObservable} from "mobx"
+import {$authHost} from "../http"
 
 export default class UserStore {
 
@@ -271,7 +271,7 @@ export default class UserStore {
 
             this._latestError = r.message
             return r.content
-        } catch (error) {
+        } catch (e) {
             this._latestError = e.message
             return {}
         }
@@ -299,7 +299,7 @@ export default class UserStore {
 
             this._latestError = r.message
             return r.content
-        } catch (error) {
+        } catch (e) {
             this._latestError = e.message
             return {}
         }
@@ -352,11 +352,12 @@ export default class UserStore {
 
             this._latestError = r.message
             return r.content
-        } catch (error) {
+        } catch (e) {
             this._latestError = e.message
             return 0
         }
     }
+
     /**
      * fetches client data by client`s token
      * 

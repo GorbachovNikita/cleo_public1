@@ -3,6 +3,7 @@ import {CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAx
 import './SellerPanel.page.css'
 import Header from "../../components/Header/Header";
 import SiteButton from "../../components/UI/inputs/SiteButton";
+import Balance from '../../components/Balance/Balance';
 
 const SellerPanel = () => {
 
@@ -61,7 +62,7 @@ const SellerPanel = () => {
                     <div className="sellerPanel_title_buttons">
                         <SiteButton value="Upload CC" />
                         <SiteButton value="Cash Out" />
-                        <p>Balance: <span>300$</span></p>
+                        <Balance />
                     </div>
                 </div>
 
